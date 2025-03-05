@@ -1,0 +1,14 @@
+<h1>Lista de dados da API Pokédex</h1>
+
+<div *ngIf="pokedex?.results; else loading">
+  <div *ngFor="let item of pokedex.results">
+    <p>{{ item.name }}</p>
+    <a [href]="item.url" target="_blank">Ver mais</a>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Carregando Pokédex...</p>
+</ng-template>
+
+<router-outlet></router-outlet>
